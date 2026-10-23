@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Big Bend or Bust! · November 13–17, 2026</title>
+<meta name="description" content="Big Bend or Bust! A five-day West Texas adventure through Lajitas, Terlingua, the Chisos Basin and Marathon. Itinerary, countdown, weather and packing list for November 13-17, 2026." />
+<meta name="theme-color" content="#132238" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E🌵%3C/text%3E%3C/svg%3E" />
+<link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+
+<a class="skip-link" href="#now">Skip to “what I should be doing now”</a>
+
+<!-- ================= BANNER ================= -->
+<header class="hero" id="top">
+  <div class="hero__inner">
+    <p class="hero__kicker">🌵 Five days · one desert · basically zero cell signal</p>
+    <h1 class="hero__title">Big Bend <span class="hero__title-accent">or Bust!</span></h1>
+    <p class="hero__sub">Lajitas → Terlingua → Chisos Basin → Marathon</p>
+    <p class="hero__dates">Friday <strong>Nov 13</strong> → Tuesday <strong>Nov 17, 2026</strong></p>
+
+    <ul class="chips" id="hero-countdown" role="list">
+      <li><b data-cd="days">–</b><span>days</span></li>
+      <li><b data-cd="hours">–</b><span>hours</span></li>
+      <li><b data-cd="minutes">–</b><span>min</span></li>
+      <li><b data-cd="seconds">–</b><span>sec</span></li>
+    </ul>
+
+    <p class="hero__status" id="hero-status">Warming up the countdown…</p>
+    <p class="hero__hint">Wheels up 7:00 AM · all times Central (Big Bend runs on park time)</p>
+  </div>
+  <p class="hero__credit">Banner: the Chisos from the river &middot; images/images100.jpg</p>
+</header>
+
+<nav class="nav" id="site-nav" aria-label="Jump to a section">
+  <div class="nav__inner">
+    <span class="nav__brand" aria-hidden="true">🌵 Big Bend or Bust</span>
+    <button class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-list">☰ Sections</button>
+    <ul class="nav__list" id="nav-list">
+      <li><a href="#countdown">⏳ Countdown</a></li>
+      <li><a href="#now">🧭 Right Now</a></li>
+      <li><a href="#weather">🌤 Forecast</a></li>
+      <li><a href="#packing">🎒 Packing</a></li>
+      <li><a href="#itinerary">🗓 Itinerary</a></li>
+      <li><a href="#details">📸 Day by Day</a></li>
+      <li><a href="#links">🔗 Links</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+
+<!-- ================= COUNTDOWN ================= -->
+<section class="section" id="countdown">
+  <div class="wrap">
+    <p class="eyebrow">⏳ Countdown</p>
+    <h2 class="section__title">How long until we’re in the desert?</h2>
+    <p class="section__lede">Counting down to <strong>7:00 AM, Friday November 13, 2026</strong> — departure morning.</p>
+
+    <div class="grid grid--2">
+      <div class="card card--status">
+        <h3 class="card__title">Status report</h3>
+        <p class="cd-big" id="cd-big">–</p>
+        <p class="cd-sub" id="cd-sub">–</p>
+        <div class="meter" role="img" aria-label="Trip progress meter"><span id="cd-meter"></span></div>
+        <p class="meter__legend" id="cd-meter-legend">Trip progress</p>
+      </div>
+
+      <div class="card">
+        <h3 class="card__title">🎯 Milestones</h3>
+        <p class="card__lede">Every big moment on the calendar with a live countdown attached.</p>
+        <ul class="milestones" id="milestones"></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RIGHT NOW ================= -->
+<section class="section section--alt" id="now">
+  <div class="wrap">
+    <p class="eyebrow">🧭 What should I be doing now</p>
+    <h2 class="section__title">Right this minute…</h2>
+    <p class="section__lede" id="now-date">Checking the clock…</p>
+
+    <div class="now-grid">
+      <div class="card card--now" id="now-card" aria-live="polite"></div>
+      <div class="card card--next" id="next-card" aria-live="polite"></div>
+    </div>
+
+    <div class="card card--wide">
+      <h3 class="card__title">📋 Rest of today</h3>
+      <ul class="later" id="later-list"></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WEATHER ================= -->
+<section class="section section--night" id="weather">
+  <div class="wrap">
+    <p class="eyebrow">🌤 Weather forecast</p>
+    <h2 class="section__title">Nov 13–20 in three places</h2>
+    <p class="section__lede">Daily highs, lows and rain odds for the places we’ll actually be standing: Lajitas/Terlingua, the Chisos Basin campground, and Marathon.</p>
+
+    <div class="wx-controls">
+      <span class="badge" id="wx-source">Loading…</span>
+      <span class="wx-updated" id="wx-updated"></span>
+      <span class="wx-actions">
+        <button class="btn btn--ghost" id="wx-unit" type="button" aria-pressed="false">°F ↔ °C</button>
+        <button class="btn" id="wx-refresh" type="button">↻ Refresh</button>
+      </span>
+    </div>
+
+    <p class="wx-note" id="wx-note">Reaching for the satellite…</p>
+
+    <div class="wx-scroll">
+      <table class="wx" id="wx-table">
+        <caption class="sr-only">Daily weather for the Big Bend trip, November 13 through November 20, 2026</caption>
+        <thead>
+          <tr>
+            <th scope="col">Day</th>
+            <th scope="col">Lajitas / Terlingua</th>
+            <th scope="col">Chisos Basin <small>camp</small></th>
+            <th scope="col">Marathon <small>hotel</small></th>
+          </tr>
+        </thead>
+        <tbody id="wx-body">
+          <tr><td colspan="4" class="wx-loading">Checking the sky…</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="wx-legend">
+      <span class="badge badge--live">LIVE</span> real forecast &nbsp;·&nbsp;
+      <span class="badge badge--typical">TYPICAL</span> 5-year average for the same dates (2021–2025) &nbsp;·&nbsp;
+      weather data by <a href="https://open-meteo.com/" rel="noopener">Open-Meteo.com</a>
+    </p>
+    <p class="wx-caveat">⚠️ The Chisos Basin sits ~5,400 ft up inside the mountains, so it runs colder and windier than the desert floor. Pack like it’s late fall, not late summer.</p>
+  </div>
+</section>
+
+<!-- ================= PACKING ================= -->
+<section class="section" id="packing">
+  <div class="wrap">
+    <p class="eyebrow">🎒 Packing</p>
+    <h2 class="section__title">Things I need to bring</h2>
+    <p class="section__lede">Tick things off as they land in the pile — this page remembers your progress on your device.</p>
+
+    <div class="pack-head">
+      <div class="meter meter--pack" role="img" aria-label="Packing progress"><span id="pack-meter"></span></div>
+      <p class="meter__legend"><span id="pack-count">0 of 16</span> packed
+        <button class="btn btn--ghost btn--tiny" id="pack-reset" type="button">↺ reset all</button>
+      </p>
+    </div>
+
+    <div class="callout callout--warn">
+      <b>🚱 There is NO water at camp.</b> Plan on a minimum of 1 gallon (4 liters) per person per day — natural water sources in the high basin are sparse. Carry it in, carry it out.
+    </div>
+
+    <h3 class="subhead">Non-negotiables</h3>
+    <ul class="pack" id="pack-essential">
+      <li class="pack__item"><label><input type="checkbox" data-pack="water" /><span class="pack__text"><b>Water storage &amp; hydration</b> — minimum 1 gallon (4 L) per person per day. Reliable water bottles or hydration bladders, and <b>no water at the camp</b>.</span></label></li>
+      <li class="pack__item"><label><input type="checkbox" data-pack="nav" /><span class="pack__text"><b>Navigation</b> — topographic maps of the park’s trail network plus a reliable compass or GPS device.</span></label></li>
+      <li class="pack__item"><label><input type="checkbox" data-pack="shelter" /><span class="pack__text"><b>Shelter &amp; sleep system</b> — a sturdy tent or vehicle camping setup rated for high mountain winds, a warm sleeping bag, and an insulated sleeping pad. I would get a cot.</span></label></li>
+      <li class="pack__item"><label><input type="checkbox" data-pack="light" /><span class="pack__text"><b>Lighting</b> — a dependable headlamp with extra batteries or a charging cable.</span></label></li>
+      <li class="pack__item"><label><input type="checkbox" data-pack="boots" /><span class="pack__text"><b>Footwear</b> — broken-in, high-traction hiking boots suitable for steep, rocky mountain trails.</span></label></li>
+      <li class="pack__item"><label><input type="checkbox" data-pack="sun" /><span class="pack__text"><b>Sun protection</b> — broad-brimmed hat, UV-blocking sunglasses, and high-SPF sunscreen.</span></label></li>
+      <li class="pack__item"><label><input type="checkbox" data-pack="firstaid" /><span class="pack__text"><b>First aid &amp; safety</b> — first aid kit, blister care, emergency multi-tool.</span></label></li>
+      <li class="pack__item"><label><input type="checkbox" data-pack="wildlife" /><span class="pack__text"><b>Wildlife protection</b> — bear-proof containers, or the metal bear-proof lockers provided at the campsites… but it’s the mountain lions that are really scary.</span></label></li>
+      <li class="pack__item"><label><input type="checkbox" data-pack="daypack" /><span class="pack__text"><b>Lightweight daypack</b> — for carrying water and layers on the summit hikes away from camp.</span></label></li>
+      <li class="pack__item"><label><input type="checkbox" data-pack="layers" /><span class="pack__text"><b>Layered clothing</b> — moisture-wicking base layers, an insulating fleece or lightweight down jacket, and a wind/water-resistant shell for those rapid temperature drops at elevation.</span></label></li>
+      <li class="pack__item"><label><input type="checkbox" data-pack="kitchen" /><span class="pack__text"><b>Camp kitchen &amp; fuel</b> — portable camp stove, compatible fuel canisters, lightweight cookware, utensils, and trash bags for Leave No Trace practices.</span></label></li>
+    </ul>
+
+    <h3 class="subhead">Things you might need — aka the comfort upgrade</h3>
+    <ul class="pack" id="pack-optional">
+      <li class="pack__item"><label><input type="checkbox" data-pack="poles" /><span class="pack__text"><b>Trekking poles</b> — I have some, but I’m not sure if I’ll bring them. (Both knees vote yes.)</span></label></li>
+      <li class="pack__item"><label><input type="checkbox" data-pack="electrolytes" /><span class="pack__text"><b>Electrolytes</b> — powdered drink mixes or tablets to maintain salt balance during strenuous desert and mountain hikes.</span></label></li>
+      <li class="pack__item"><label><input type="checkbox" data-pack="chair" /><span class="pack__text"><b>Compact camp chair</b> — a collapsible, lightweight folding chair for comfortable lounging around the site after a long day on the trail.</span></label></li>
+      <li class="pack__item"><label><input type="checkbox" data-pack="coffee" /><span class="pack__text"><b>Manual coffee maker</b> — a portable pour-over or AeroPress setup for a premium morning brew with basin views.</span></label></li>
+      <li class="pack__item"><label><input type="checkbox" data-pack="slippers" /><span class="pack__text"><b>Camp slippers</b> — comfortable shoes for around the camp after wearing hiking boots all day.</span></label></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= ITINERARY CALENDAR ================= -->
+<section class="section section--alt" id="itinerary">
+  <div class="wrap">
+    <p class="eyebrow">🗓 Itinerary</p>
+    <h2 class="section__title">The plan, day by day</h2>
+    <p class="section__lede">Tap any day card to jump straight to the full story and the photos.</p>
+
+    <div class="cal">
+      <a class="cal-day" href="#day1">
+        <span class="cal-day__dow">Friday</span>
+        <span class="cal-day__num">13</span>
+        <span class="cal-day__mon">November 2026</span>
+        <span class="cal-day__tag">Day 1 · Lajitas</span>
+        <ul class="cal-day__list">
+          <li>🚙 Drive into the Chihuahuan Desert</li>
+          <li>🏨 Check in to Lajitas Golf Resort · evening</li>
+          <li>🍽 Dinner on site at the resort</li>
+        </ul>
+        <span class="cal-day__go">Day 1 details →</span>
+      </a>
+
+      <a class="cal-day" href="#day2">
+        <span class="cal-day__dow">Saturday</span>
+        <span class="cal-day__num">14</span>
+        <span class="cal-day__mon">November 2026</span>
+        <span class="cal-day__tag">Day 2 · Ghost town → Basin</span>
+        <ul class="cal-day__list">
+          <li>☕ Breakfast at Venga Cafe · morning</li>
+          <li>⛺ Chisos Basin camp check-in · 1:00 PM</li>
+          <li>🥾 Window Trail hike · 3:45 PM</li>
+          <li>🌮 Dinner in the basin · 7:30 PM</li>
+        </ul>
+        <span class="cal-day__go">Day 2 details →</span>
+      </a>
+
+      <a class="cal-day cal-day--hero" href="#day3">
+        <span class="cal-day__dow">Sunday</span>
+        <span class="cal-day__num">15</span>
+        <span class="cal-day__mon">November 2026</span>
+        <span class="cal-day__tag">Day 3 · The crown jewel</span>
+        <ul class="cal-day__list">
+          <li>🍳 Early breakfast in the basin · 7:00 AM</li>
+          <li>🥾 South Rim Trail · 8:30 AM</li>
+          <li>🌄 Back to camp, rest, dinner</li>
+        </ul>
+        <span class="cal-day__go">Day 3 details →</span>
+      </a>
+
+      <a class="cal-day" href="#day4">
+        <span class="cal-day__dow">Monday</span>
+        <span class="cal-day__num">16</span>
+        <span class="cal-day__mon">November 2026</span>
+        <span class="cal-day__tag">Day 4 · Lost Mine → Marathon</span>
+        <ul class="cal-day__list">
+          <li>🎒 Pack up camp · 7:00 AM</li>
+          <li>🥾 Lost Mine Trail · 9:00 AM</li>
+          <li>🍖 Lunch at DB’s Rustic Iron BBQ · 1:00 PM</li>
+          <li>🏨 Gage Hotel check-in · 4:00 PM</li>
+          <li>🍸 Dinner at the Gage · 7:30 PM</li>
+        </ul>
+        <span class="cal-day__go">Day 4 details →</span>
+      </a>
+
+      <a class="cal-day" href="#day5">
+        <span class="cal-day__dow">Tuesday</span>
+        <span class="cal-day__num">17</span>
+        <span class="cal-day__mon">November 2026</span>
+        <span class="cal-day__tag">Day 5 · Homeward bound</span>
+        <ul class="cal-day__list">
+          <li>🥞 Breakfast at the Gage · 9:00 AM</li>
+          <li>🛣 Late morning → evening drive home</li>
+          <li>🤔 The decision: long scenic road, or short one?</li>
+        </ul>
+        <span class="cal-day__go">Day 5 details →</span>
+      </a>
+
+      <div class="cal-day cal-day--muted">
+        <span class="cal-day__dow">Wednesday</span>
+        <span class="cal-day__num">18</span>
+        <span class="cal-day__mon">November 2026</span>
+        <span class="cal-day__tag">Buffer day</span>
+        <ul class="cal-day__list">
+          <li>🧺 Laundry. Sleep. Tell tall tales.</li>
+        </ul>
+      </div>
+
+      <div class="cal-day cal-day--muted">
+        <span class="cal-day__dow">Thursday</span>
+        <span class="cal-day__num">19</span>
+        <span class="cal-day__mon">November 2026</span>
+        <span class="cal-day__tag">Buffer day</span>
+        <ul class="cal-day__list">
+          <li>🧦 Figure out where the other sock went.</li>
+        </ul>
+      </div>
+
+      <div class="cal-day cal-day--muted">
+        <span class="cal-day__dow">Friday</span>
+        <span class="cal-day__num">20</span>
+        <span class="cal-day__mon">November 2026</span>
+        <span class="cal-day__tag">Buffer day</span>
+        <ul class="cal-day__list">
+          <li>🌵 Start scheming the next trip.</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="cal-note">The forecast covers Nov 13–20 so there’s a little breathing room on both ends of the trip.</p>
+  </div>
+</section>
+
+<!-- ================= DAY BY DAY ================= -->
+<section class="section" id="details">
+  <div class="wrap">
+    <p class="eyebrow">📸 Day by day</p>
+    <h2 class="section__title">The whole story</h2>
+    <p class="section__lede">Every stop, every hike, plus the trivia you’ll be reciting at dinner. Tap a photo to see it big.</p>
+
+    <article class="day" id="day1">
+      <header class="day__head">
+        <p class="day__tag">Day 1 · Friday, November 13</p>
+        <h3 class="day__title">Desert Highway &amp; Lajitas Oasis</h3>
+      </header>
+      <ul class="agenda">
+        <li>
+          <span class="agenda__time">7:00 AM</span>
+          <div class="agenda__body">
+            <b>Wheels up — drive &amp; check-in</b>
+            <p>Hit the open road heading deep into the Chihuahuan Desert toward Lajitas Golf Resort, a historic resort nestled right along the Rio Grande.</p>
+          </div>
+        </li>
+        <li>
+          <span class="agenda__time">Evening</span>
+          <div class="agenda__body">
+            <b>Dinner at Lajitas Golf Resort Restaurant</b>
+            <p>Settle into the desert atmosphere with a great meal right on site.</p>
+          </div>
+        </li>
+      </ul>
+      <p class="funfact"><b>🤠 Fun fact</b> Lajitas once elected a beer-drinking pet goat named Clay Henry III as its honorary mayor. Its championship golf course, Black Jack’s Crossing, was designed by PGA legend Lanny Wadkins.</p>
+      <div class="thumbs">
+        <button class="thumb" type="button"><img src="images/image001.jpg" alt="Low adobe buildings and green trees of a small desert village tucked below a long, striped mesa cliff under a blue sky" width="678" height="452" loading="lazy" decoding="async" /><span>Lajitas &amp; the mesa</span></button>
+        <button class="thumb" type="button"><img src="images/image002.jpg" alt="Sunset over Lajitas Golf Resort: a lit pool, palms and bright green fairway above the canyon of the Rio Grande, mountains fading into an orange sky" width="1920" height="1778" loading="lazy" decoding="async" /><span>The resort at sunset</span></button>
+      </div>
+    </article>
+
+    <article class="day" id="day2">
+      <header class="day__head">
+        <p class="day__tag">Day 2 · Saturday, November 14</p>
+        <h3 class="day__title">Ghost Town Morning &amp; Chisos Basin Basecamp</h3>
+      </header>
+      <ul class="agenda">
+        <li>
+          <span class="agenda__time">Morning</span>
+          <div class="agenda__body">
+            <b>Breakfast at Venga Cafe</b>
+            <p>Kick off the morning with local coffee, fresh pastries and breakfast tacos in the historic Terlingua Ghost Town.</p>
+          </div>
+        </li>
+        <li>
+          <span class="agenda__time">1:00 PM</span>
+          <div class="agenda__body">
+            <b>Camp check-in at Chisos Basin Campground</b>
+            <p>Head up into Big Bend National Park and claim the site. Fill every container you own before you leave the basin — there is no water at camp.</p>
+          </div>
+        </li>
+        <li>
+          <span class="agenda__time">3:45 PM</span>
+          <div class="agenda__body">
+            <b>Window Trail hike</b>
+            <p>Lace up your boots for the classic basin warm-up hike out to the pour-off at the Window.</p>
+          </div>
+        </li>
+        <li>
+          <span class="agenda__time">7:30 PM</span>
+          <div class="agenda__body">
+            <b>Dinner in the basin</b>
+            <p>A hearty dinner with a side of incredible night sky right in the Chisos Basin.</p>
+          </div>
+        </li>
+      </ul>
+      <p class="funfact"><b>🤠 Fun fact</b> Terlingua was once one of the largest quicksilver (mercury) mining communities in the world during the early 20th century. Meanwhile, the Chisos Basin is the only mountain basin enclosed entirely within a national park in the United States.</p>
+
+      <div class="thumbs">
+        <button class="thumb" type="button"><img src="images/image003.jpg" alt="Ruined stone and adobe buildings of a ghost town scattered across dry desert ground with mountains behind" width="726" height="275" loading="lazy" decoding="async" /><span>Terlingua ghost town</span></button>
+        <button class="thumb" type="button"><img src="images/image004.jpg" alt="Rustic wooden crosses and stone-piled graves in a desert cemetery, with the blue silhouette of the Chisos Mountains in the distance" width="1200" height="900" loading="lazy" decoding="async" /><span>The Terlingua cemetery</span></button>
+        <button class="thumb" type="button"><img src="images/image005.jpg" alt="Inside a high-ceilinged room with a wall of vintage mirrors and framed art posters, leather sofas and armchairs, a red rug, and a black cat walking across the concrete floor" width="516" height="387" loading="lazy" decoding="async" /><span>Coffee stop, ghost town</span></button>
+        <button class="thumb" type="button"><img src="images/image006.jpg" alt="Looking down a narrow V-shaped slot between two rock faces — the Window — toward the desert floor far below under a deep blue sky" width="480" height="640" loading="lazy" decoding="async" /><span>The Window</span></button>
+        <button class="thumb" type="button"><img src="images/web/image007.jpg" data-full="images/image007.jpg" alt="A blue and grey dome tent pitched on gravel in the Chisos Basin, with a green, cloud-wrapped mountain rising behind it" width="1600" height="1200" loading="lazy" decoding="async" /><span>Home for two nights</span></button>
+        <button class="thumb" type="button"><img src="images/image008.jpg" alt="The Milky Way arching over the dark silhouette of the Chisos Mountains, with one bright meteor streak in the star field" width="1200" height="775" loading="lazy" decoding="async" /><span>Big Bend after dark</span></button>
+      </div>
+    </article>
+
+    <article class="day day--hero" id="day3">
+      <header class="day__head">
+        <p class="day__tag">Day 3 · Sunday, November 15 · the big one</p>
+        <h3 class="day__title">The Crown Jewel: South Rim Expedition</h3>
+      </header>
+      <ul class="agenda">
+        <li>
+          <span class="agenda__time">7:00 AM</span>
+          <div class="agenda__body">
+            <b>Early breakfast at Chisos Basin</b>
+            <p>Fuel up in the dark. This is a long day on the trail.</p>
+          </div>
+        </li>
+        <li>
+          <span class="agenda__time">8:30 AM</span>
+          <div class="agenda__body">
+            <b>Start the South Rim Trail hike</b>
+            <p>Water, layers, electrolytes, and every snack you own. It gets cold and windy at the top even when the basin is warm.</p>
+          </div>
+        </li>
+        <li>
+          <span class="agenda__time">Afternoon</span>
+          <div class="agenda__body">
+            <b>Return to camp — rest, then dinner</b>
+            <p>Shoes off, feet up, then dinner under some of the darkest night skies in North America.</p>
+          </div>
+        </li>
+      </ul>
+      <p class="funfact"><b>🤠 Fun fact</b> The South Rim sits at roughly 7,200 feet, offering a dramatic precipice where hikers look nearly 5,000 vertical feet straight down across the Rio Grande into Mexico.</p>
+      <div class="thumbs">
+        <button class="thumb" type="button"><img src="images/image010.jpg" alt="A cast-iron skillet of fried eggs and bacon on a campfire grate with toasted bread and a blue enamel mug of coffee" width="746" height="1024" loading="lazy" decoding="async" /><span>Basin breakfast, campfire style</span></button>
+        <button class="thumb" type="button"><img src="images/image011.jpg" alt="A vast view from the South Rim: layered green and tan ridges stretching to the horizon, seen from a cliff edge with rocky outcrops on both sides" width="1200" height="844" loading="lazy" decoding="async" /><span>The South Rim payoff</span></button>
+        <button class="thumb" type="button"><img src="images/image012.jpg" alt="A sunny Chisos Basin campsite with picnic tables, metal bear-proof storage lockers and a rocky peak behind" width="400" height="275" loading="lazy" decoding="async" /><span>Back at camp</span></button>
+      </div>
+    </article>
+
+    <article class="day" id="day4">
+      <header class="day__head">
+        <p class="day__tag">Day 4 · Monday, November 16</p>
+        <h3 class="day__title">High-Altitude Views &amp; Historic Marathon</h3>
+      </header>
+      <ul class="agenda">
+        <li>
+          <span class="agenda__time">7:00 AM</span>
+          <div class="agenda__body">
+            <b>Early start — pack up camp</b>
+            <p>Coffee, tear down, double-check the site for anything left behind. Leave No Trace, and don’t leave crumbs for the javelinas.</p>
+          </div>
+        </li>
+        <li>
+          <span class="agenda__time">9:00 AM</span>
+          <div class="agenda__body">
+            <b>Lost Mine Trail hike</b>
+            <p>Back at the trailhead by noon. Big views for a relatively short hike — the best payoff-per-mile in the park.</p>
+          </div>
+        </li>
+        <li>
+          <span class="agenda__time">1:00 PM</span>
+          <div class="agenda__body">
+            <b>Lunch at DB’s Rustic Iron BBQ</b>
+            <p>Mouth-watering brisket, ribs and West Texas barbecue out of a trailer in Terlingua. You’ve earned it.</p>
+          </div>
+        </li>
+        <li>
+          <span class="agenda__time">Afternoon</span>
+          <div class="agenda__body">
+            <b>Scenic drive to Marathon</b>
+            <p>Take the long way if the light is good — this is the drive people write songs about.</p>
+          </div>
+        </li>
+        <li>
+          <span class="agenda__time">4:00 PM</span>
+          <div class="agenda__body">
+            <b>Check in at the Gage Hotel</b>
+            <p>Shower, real bed, air conditioning. Civilization, briefly.</p>
+          </div>
+        </li>
+        <li>
+          <span class="agenda__time">7:30 PM</span>
+          <div class="agenda__body">
+            <b>Dinner at the Gage Hotel</b>
+            <p>A proper dinner on property to close out the trail days.</p>
+          </div>
+        </li>
+      </ul>
+      <p class="funfact"><b>🤠 Fun fact</b> The Lost Mine Trail is named after a legendary Spanish silver mine rumored to have been hidden by enslaved laborers who staged a historic revolt. Meanwhile, the Gage Hotel was built in 1927 by Alfred S. Gage, a cattle baron who owned over half a million acres of West Texas ranch land.</p>
+
+      <div class="thumbs">
+        <button class="thumb" type="button"><img src="images/image020.jpg" alt="A hiker standing with both arms raised on a rock ledge along the Lost Mine Trail, with the sheer face of Casa Grande rising beyond" width="387" height="516" loading="lazy" decoding="async" /><span>Lost Mine Trail</span></button>
+        <button class="thumb" type="button"><img src="images/image021.jpg" alt="Jagged rock formations of the Lost Mine Trail at dusk, lit pink and gold by the last light with peaks fading into the distance" width="335" height="597" loading="lazy" decoding="async" /><span>Lost Mine at dusk</span></button>
+        <button class="thumb" type="button"><img src="images/image022.jpg" alt="The two-story yellow brick Gage Hotel in Marathon under a deep blue sky, with a spiky agave planted in front" width="516" height="387" loading="lazy" decoding="async" /><span>The Gage Hotel</span></button>
+        <button class="thumb" type="button"><img src="images/image023.jpg" alt="The Gage Hotel bar: a long wooden bar lined with leather stools, shelves of bottles, and a buffalo head mounted on the brick wall above" width="800" height="331" loading="lazy" decoding="async" /><span>The Gage bar</span></button>
+        <button class="thumb" type="button"><img src="images/image024.jpg" alt="The Gage Hotel dining room with a glowing antler chandelier, animal skull mounts on the walls and tables set for dinner" width="550" height="363" loading="lazy" decoding="async" /><span>Dinner at the Gage</span></button>
+        <button class="thumb" type="button"><img src="images/image025.jpg" alt="A weathered food trailer with a sign reading DB’s Rustic Iron BBQ, Terlingua, Texas, beside a sandy desert hill under a blue sky" width="473" height="422" loading="lazy" decoding="async" /><span>DB’s Rustic Iron BBQ</span></button>
+      </div>
+    </article>
+
+    <article class="day" id="day5">
+      <header class="day__head">
+        <p class="day__tag">Day 5 · Tuesday, November 17</p>
+        <h3 class="day__title">Grand Finale &amp; Homeward Bound</h3>
+      </header>
+      <ul class="agenda">
+        <li>
+          <span class="agenda__time">9:00 AM</span>
+          <div class="agenda__body">
+            <b>Breakfast at the Gage Hotel</b>
+            <p>Savor a relaxed breakfast before pointing the car toward home.</p>
+          </div>
+        </li>
+        <li>
+          <span class="agenda__time">Late morning → evening</span>
+          <div class="agenda__body">
+            <b>The drive back — and the big decision</b>
+            <p>The long road (about 3.5 hours to Marathon) is probably the most scenic drive in Texas. The shorter road (about 2.25 hours) is still nice. According to Gemini: “Yes, the extra 1.5 hours is absolutely worth it if you have the time and enjoy high-reward scenic driving.”</p>
+          </div>
+        </li>
+      </ul>
+      <p class="funfact"><b>🤠 Fun fact</b> Marathon acts as the quiet, artistic gateway to Big Bend and is officially designated a Dark Sky Community, boasting some of the clearest stargazing conditions in the country.</p>
+      <div class="thumbs">
+        <button class="thumb" type="button"><img src="images/image030.jpg" alt="A straight West Texas highway running toward a flat-topped butte under a brilliant pink and orange sunset sky" width="505" height="607" loading="lazy" decoding="async" /><span>The road home</span></button>
+        <button class="thumb" type="button"><img src="images/image031.jpg" alt="The River Road curving along the Rio Grande, with heavy storm clouds over rugged cliffs and a metal guardrail in the foreground" width="689" height="445" loading="lazy" decoding="async" /><span>The River Road (FM 170)</span></button>
+        <button class="thumb" type="button"><img src="images/image032.jpg" alt="The Rio Grande winding through Santa Elena Canyon, with sheer canyon walls on both sides and the road climbing the gap between them" width="640" height="480" loading="lazy" decoding="async" /><span>Santa Elena Canyon</span></button>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ================= LINKS ================= -->
+<section class="section section--night" id="links">
+  <div class="wrap">
+    <p class="eyebrow">🔗 Web links</p>
+    <h2 class="section__title">Bookmarks worth keeping</h2>
+    <div class="grid grid--3">
+      <a class="link-card" href="https://www.lajitasgolfresort.com/" rel="noopener">
+        <span class="link-card__ico">⛳</span>
+        <b>Lajitas Golf Resort</b>
+        <span>Rooms, dining, and the course Lanny Wadkins designed over the river.</span>
+        <span class="link-card__go">lajitasgolfresort.com ↗</span>
+      </a>
+      <a class="link-card" href="https://www.youtube.com/watch?v=YHxpDD-HzIs" rel="noopener">
+        <span class="link-card__ico">🎬</span>
+        <b>The Greatest Hike in Texas</b>
+        <span>Watch this before South Rim day for instant motivation.</span>
+        <span class="link-card__go">youtube.com ↗</span>
+      </a>
+      <a class="link-card" href="https://www.google.com/maps/d/edit?mid=1Qb5g9nfJN9fakmRavfmQAqyOzAvV6P4&amp;usp=sharing" rel="noopener">
+        <span class="link-card__ico">🗺</span>
+        <b>Google My Maps</b>
+        <span>Every planned route and stop in one map. Sign-in may be required.</span>
+        <span class="link-card__go">google.com/maps ↗</span>
+      </a>
+    </div>
+    <p class="wx-caveat">📴 Heads up: there is basically no cell service in the basin. Screenshot the map, save the trail notes, and tell someone at home the plan before you drive up.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p class="footer__title">🌵 Big Bend or Bust! · November 13–17, 2026</p>
+    <p class="footer__line">Water first, boots broken in, mountain lions respected. See you in the desert.</p>
+    <p class="footer__meta">Countdown &amp; status run off your device’s clock · weather by <a href="https://open-meteo.com/" rel="noopener">Open-Meteo</a> · page opened <span id="footer-updated">–</span></p>
+  </div>
+</footer>
+
+<!-- ================= LIGHTBOX ================= -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+  <button class="lightbox__btn lightbox__close" id="lb-close" type="button" aria-label="Close photo viewer">✕</button>
+  <button class="lightbox__btn lightbox__nav lightbox__nav--prev" id="lb-prev" type="button" aria-label="Previous photo">‹</button>
+  <figure class="lightbox__figure">
+    <img id="lb-img" src="" alt="" />
+    <figcaption id="lb-caption"></figcaption>
+  </figure>
+  <button class="lightbox__btn lightbox__nav lightbox__nav--next" id="lb-next" type="button" aria-label="Next photo">›</button>
+</div>
+
+<script src="assets/app.js" defer></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
