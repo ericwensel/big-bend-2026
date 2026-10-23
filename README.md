@@ -70,7 +70,7 @@ cd "G:\My Drive\Google Documents\Travel\Big_Bend_2026"
 git init -b main
 git add .
 git commit -m "Big Bend or Bust trip page"
-git remote add origin https://github.com/<your-user>/big-bend-2026.git
+git remote add origin https://github.com/ericwensel/big-bend-2026.git
 git push -u origin main
 ```
 
