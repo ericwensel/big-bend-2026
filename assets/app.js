@@ -12,7 +12,7 @@
    change, so every offset below is -06:00 (CST). */
 var TRIP = {
   timeZone: 'America/Chicago',
-  startISO: '2026-11-13T07:00:00-06:00',   // wheels up
+  startISO: '2026-11-13T05:30:00-06:00',   // wheels up
   endISO: '2026-11-18T02:00:00-06:00',     // home and asleep
   planningStartISO: '2026-10-15T00:00:00-05:00',
   days: ['2026-11-13', '2026-11-14', '2026-11-15', '2026-11-16', '2026-11-17']
@@ -20,42 +20,45 @@ var TRIP = {
 
 /* Each agenda item drives the "right now" cards. */
 var SCHEDULE = [
-  { start: '2026-11-13T07:00:00-06:00', end: '2026-11-13T18:00:00-06:00', icon: '🚙', time: '7:00 AM',
+  { start: '2026-11-13T05:30:00-06:00', end: '2026-11-13T18:00:00-06:00', icon: '🚙', time: '5:30 AM',
     title: 'Drive to Lajitas', place: 'The open road → Lajitas, TX',
-    note: 'Gas up, snacks in the door pocket, playlist queued. Aim to be checked in before dark.' },
-  { start: '2026-11-13T18:00:00-06:00', end: '2026-11-13T19:30:00-06:00', icon: '🏨', time: 'Evening',
+    note: 'Early start, long haul. Gas up, snacks in the door pocket, playlist queued — aim to be checked in before dark.' },
+  { start: '2026-11-13T18:00:00-06:00', end: '2026-11-13T20:00:00-06:00', icon: '🏨', time: 'Evening',
     title: 'Check in to Lajitas Golf Resort', place: 'Lajitas, TX · on the Rio Grande',
     note: 'Historic resort right on the river. Drop the bags, find the porch, breathe.' },
-  { start: '2026-11-13T19:30:00-06:00', end: '2026-11-13T21:30:00-06:00', icon: '🍽️', time: '7:30 PM',
+  { start: '2026-11-13T20:00:00-06:00', end: '2026-11-13T22:00:00-06:00', icon: '🍽️', time: '8:00 PM',
     title: 'Dinner at the Lajitas Golf Resort Restaurant', place: 'On property',
     note: 'No cooking tonight — that starts tomorrow.' },
-  { start: '2026-11-14T07:30:00-06:00', end: '2026-11-14T09:00:00-06:00', icon: '☕', time: 'Morning',
-    title: 'Breakfast at Venga Cafe', place: 'Terlingua Ghost Town',
-    note: 'Local coffee, fresh pastries, breakfast tacos. Wander the ghost town and cemetery while you are there.' },
-  { start: '2026-11-14T09:00:00-06:00', end: '2026-11-14T12:30:00-06:00', icon: '🚙', time: 'Midday',
-    title: 'Drive into the park & stock up', place: 'Terlingua → Chisos Basin',
-    note: 'Fill every water container you own before heading up. There is no water at the campground.' },
+  { start: '2026-11-14T12:00:00-06:00', end: '2026-11-14T13:00:00-06:00', icon: '☕', time: '12:00 PM',
+    title: 'Lunch at Venga Cafe', place: 'Terlingua Ghost Town',
+    note: 'Coffee, pastries and lunch in the ghost town — then it is about 40 minutes up to the basin. Order to go if you are running behind.' },
   { start: '2026-11-14T13:00:00-06:00', end: '2026-11-14T15:00:00-06:00', icon: '⛺', time: '1:00 PM',
     title: 'Check in at Chisos Basin Campground', place: 'Chisos Basin · ~5,400 ft',
-    note: 'Tent up, stakes deep — the basin gets wind. Food goes straight into the bear box.' },
+    note: 'Fill every water container you own on the way up — there is no water at camp. Tent up, stakes deep, food in the bear box.' },
   { start: '2026-11-14T15:45:00-06:00', end: '2026-11-14T18:15:00-06:00', icon: '🥾', time: '3:45 PM',
     title: 'Window Trail hike', place: 'Chisos Basin trailhead',
     note: 'Roughly 5.5 miles round trip down to the pour-off. Great warm-up with a big finish.' },
   { start: '2026-11-14T19:30:00-06:00', end: '2026-11-14T21:30:00-06:00', icon: '🌮', time: '7:30 PM',
-    title: 'Dinner in the basin', place: 'Chisos Basin',
+    title: 'Dinner at the Browns', place: 'At the Browns',
     note: 'Eat, then kill every light you can and look up.' },
-  { start: '2026-11-15T07:00:00-06:00', end: '2026-11-15T08:15:00-06:00', icon: '🍳', time: '7:00 AM',
-    title: 'Early breakfast in the basin', place: 'Chisos Basin',
-    note: 'Coffee first. Then boots.' },
-  { start: '2026-11-15T08:30:00-06:00', end: '2026-11-15T16:30:00-06:00', icon: '🏔️', time: '8:30 AM',
-    title: 'South Rim Trail — the crown jewel', place: 'Chisos Mountains · up to ~7,200 ft',
-    note: 'A long day out: water, electrolytes, layers, headlamp as insurance. The view straight down into Mexico is the whole point of this trip.' },
-  { start: '2026-11-15T16:30:00-06:00', end: '2026-11-15T19:00:00-06:00', icon: '🪑', time: 'Afternoon',
-    title: 'Back at camp — rest', place: 'Chisos Basin',
-    note: 'Feet up, camp slippers on, zero regrets.' },
-  { start: '2026-11-15T19:00:00-06:00', end: '2026-11-15T21:30:00-06:00', icon: '🔥', time: 'Evening',
-    title: 'Dinner at camp', place: 'Chisos Basin',
-    note: 'Last full night in the basin — make it a long one.' },
+  { start: '2026-11-15T08:00:00-06:00', end: '2026-11-15T09:30:00-06:00', icon: '🍳', time: '8:00 AM',
+    title: 'Breakfast at the Browns', place: 'At the Browns',
+    note: 'Start the day with a good meal before exploring the park.' },
+  { start: '2026-11-15T10:00:00-06:00', end: '2026-11-15T11:00:00-06:00', icon: '🛣️', time: '10:00 AM',
+    title: 'Ross Maxwell Scenic Drive', place: 'Big Bend · west side',
+    note: 'The park’s classic west-side road, dropping from the mountains all the way down to the river. Pull over often.' },
+  { start: '2026-11-15T11:00:00-06:00', end: '2026-11-15T13:00:00-06:00', icon: '♨️', time: '11:00 AM',
+    title: 'Hot Spring Historic Trail & the J.O. Langford Resort Ruins', place: 'Hot Springs · Rio Grande',
+    note: 'A 1.3 mile loop that takes you to the 105°F hot spring.' },
+  { start: '2026-11-15T13:00:00-06:00', end: '2026-11-15T14:00:00-06:00', icon: '🥪', time: '1:00 PM',
+    title: 'Lunch on the trail', place: 'Somewhere with a view',
+    note: 'Pack something easy to eat.' },
+  { start: '2026-11-15T14:00:00-06:00', end: '2026-11-15T16:30:00-06:00', icon: '🏞️', time: '2:00 PM',
+    title: 'Santa Elena Canyon Trail', place: 'End of Ross Maxwell Scenic Drive',
+    note: 'A 1.4 mile out and back that begins at the paved parking area at the end of Ross Maxwell Scenic Drive.' },
+  { start: '2026-11-15T19:30:00-06:00', end: '2026-11-15T21:30:00-06:00', icon: '🍲', time: '7:30 PM',
+    title: 'Dinner at the Wensels', place: 'The Wensel camp site',
+    note: 'Refuel after a long day at the Wensel camp site.' },
   { start: '2026-11-16T07:00:00-06:00', end: '2026-11-16T08:45:00-06:00', icon: '🎒', time: '7:00 AM',
     title: 'Early start — pack up camp', place: 'Chisos Basin',
     note: 'Tear down, sweep the site, leave no trace (and no crumbs for the javelinas).' },
@@ -66,35 +69,43 @@ var SCHEDULE = [
     title: 'Lunch at DB’s Rustic Iron BBQ', place: 'Terlingua, TX',
     note: 'Brisket, ribs, and a nap in the passenger seat right afterward.' },
   { start: '2026-11-16T14:30:00-06:00', end: '2026-11-16T16:00:00-06:00', icon: '🚙', time: 'Afternoon',
-    title: 'Scenic drive to Marathon', place: 'Big Bend → Marathon',
-    note: 'Take the long, gorgeous way if the light is right.' },
+    title: 'Scenic drive to Marathon — and the big decision', place: 'Big Bend → Marathon',
+    note: 'The long road (about 3.5 hours) is probably the most scenic drive in Texas. The shorter road (about 2.25 hours) is still nice. National Geographic calls it “one of the top 10 most scenic drives in the country.”' },
   { start: '2026-11-16T16:00:00-06:00', end: '2026-11-16T19:30:00-06:00', icon: '🏨', time: '4:00 PM',
     title: 'Check in at the Gage Hotel', place: 'Marathon, TX',
     note: 'Hot shower, real bed, air conditioning. Civilization — briefly.' },
   { start: '2026-11-16T19:30:00-06:00', end: '2026-11-16T21:30:00-06:00', icon: '🍸', time: '7:30 PM',
     title: 'Dinner at the Gage Hotel', place: 'Marathon, TX',
     note: 'Have a drink at the bar first — the buffalo head is watching you.' },
-  { start: '2026-11-17T09:00:00-06:00', end: '2026-11-17T10:30:00-06:00', icon: '🥞', time: '9:00 AM',
+  { start: '2026-11-17T09:00:00-06:00', end: '2026-11-17T10:00:00-06:00', icon: '🥞', time: '9:00 AM',
     title: 'Breakfast at the Gage Hotel', place: 'Marathon, TX',
     note: 'Relaxed breakfast, then load the car one last time.' },
-  { start: '2026-11-17T10:30:00-06:00', end: '2026-11-17T22:00:00-06:00', icon: '🛣️', time: 'Late morning',
+  { start: '2026-11-17T10:00:00-06:00', end: '2026-11-17T21:00:00-06:00', icon: '🛣️', time: '10:00 AM',
     title: 'Drive home', place: 'Marathon → home',
-    note: 'The long road is the most scenic drive in Texas — per Gemini, absolutely worth the extra 1.5 hours.' }
+    note: 'A little shorter drive than on the way up and better scenery. Enjoy the views along the way.' }
 ];
 
 /* Highlights for the countdown card. */
 var MILESTONES = [
-  { at: '2026-11-13T07:00:00-06:00', icon: '🚙', label: 'Leave the driveway' },
+  { at: '2026-11-13T05:30:00-06:00', icon: '🚙', label: 'Leave the driveway' },
   { at: '2026-11-13T18:00:00-06:00', icon: '🏨', label: 'Check in at Lajitas Golf Resort' },
-  { at: '2026-11-14T08:00:00-06:00', icon: '☕', label: 'Breakfast at Venga Cafe' },
+  { at: '2026-11-13T20:00:00-06:00', icon: '🍽️', label: 'Dinner at the Lajitas restaurant' },
+  { at: '2026-11-14T12:00:00-06:00', icon: '☕', label: 'Lunch at Venga Cafe' },
   { at: '2026-11-14T13:00:00-06:00', icon: '⛺', label: 'Chisos Basin campsite claimed' },
   { at: '2026-11-14T15:45:00-06:00', icon: '🥾', label: 'Window Trail' },
-  { at: '2026-11-15T08:30:00-06:00', icon: '🏔️', label: 'South Rim Trail — the big one' },
+  { at: '2026-11-14T19:30:00-06:00', icon: '🌮', label: 'Dinner at the Browns' },
+  { at: '2026-11-15T08:00:00-06:00', icon: '🍳', label: 'Breakfast at the Browns' },
+  { at: '2026-11-15T10:00:00-06:00', icon: '🛣️', label: 'Ross Maxwell Scenic Drive' },
+  { at: '2026-11-15T11:00:00-06:00', icon: '♨️', label: 'Hot Spring Historic Trail' },
+  { at: '2026-11-15T13:00:00-06:00', icon: '🥪', label: 'Lunch on the trail' },
+  { at: '2026-11-15T14:00:00-06:00', icon: '🏞️', label: 'Santa Elena Canyon Trail' },
+  { at: '2026-11-15T19:30:00-06:00', icon: '🍲', label: 'Dinner at the Wensels' },
   { at: '2026-11-16T09:00:00-06:00', icon: '⛰️', label: 'Lost Mine Trail' },
   { at: '2026-11-16T13:00:00-06:00', icon: '🍖', label: 'DB’s Rustic Iron BBQ' },
   { at: '2026-11-16T16:00:00-06:00', icon: '🏨', label: 'Gage Hotel check-in' },
+  { at: '2026-11-16T19:30:00-06:00', icon: '🍸', label: 'Dinner at the Gage' },
   { at: '2026-11-17T09:00:00-06:00', icon: '🥞', label: 'Breakfast at the Gage' },
-  { at: '2026-11-17T11:00:00-06:00', icon: '🛣️', label: 'Homeward bound' }
+  { at: '2026-11-17T10:00:00-06:00', icon: '🛣️', label: 'Homeward bound' }
 ];
 
 /* Pre-trip nudges shown before departure. */
@@ -102,7 +113,9 @@ var PREP = [
   '🥾 Break in the boots — at least one long walk this week',
   '🔥 Test the camp stove and count your fuel canisters',
   '💧 Plan the water: 1 gallon per person per day, and there is none at camp',
-  '🗺️ Print the topo maps, download offline maps, and leave your plan with someone at home'
+  '🗺️ Print the topo maps, download offline maps, and leave your plan with someone at home',
+  '🌡️ Check the weather. You want to pack accordingly.',
+  '🚗 Check your car fluids, tires and brakes. It’s a long drive and you don’t want to break down where you are going.'
 ];
 
 /* ---------------------------------------------------------------- weather --
@@ -388,7 +401,7 @@ function initNow() {
         '<h3 class="now-title">Pre-flight mode</h3>' +
         '<p class="now-place">Somewhere between “I should start packing” and “I have already packed twice.”</p>' +
         '<p class="now-note">Nothing on the itinerary yet. The only job this week is getting gear, body and water plan ready for the desert.</p>' +
-        '<p class="now-time">Departure <span class="now-count">' + relText(start, now) + '</span> · Friday Nov 13, 7:00 AM</p>');
+        '<p class="now-time">Departure <span class="now-count">' + relText(start, now) + '</span> · Friday Nov 13, 5:30 AM</p>');
       paint(nextCard,
         '<p class="now-label">Get ahead of it</p>' +
         '<ul class="later">' + PREP.map(function (t) {

@@ -5,7 +5,7 @@ A single-page trip site for the **November 13–17, 2026** run to Big Bend Natio
 
 One scrollable page. Plain HTML, CSS and JavaScript — no build step, no frameworks, no API keys.
 
-**Live site:** `https://<your-github-user>.github.io/big-bend-2026/` *(fill this in once Pages is on)*
+**Live site:** <https://ericwensel.github.io/big-bend-2026/> — deployed from `main` via GitHub Pages
 
 ---
 
@@ -13,13 +13,13 @@ One scrollable page. Plain HTML, CSS and JavaScript — no build step, no framew
 
 | Section | What it does |
 | --- | --- |
-| **Banner** | `images/images100.jpg` as the hero, with a live countdown to 7:00 AM, Friday Nov 13 |
-| **Countdown** | Days / hours / minutes / seconds, a status card with a progress meter, and 11 milestone countdowns |
+| **Banner** | `images/images100.jpg` as the hero, with a live countdown to 5:30 AM, Friday Nov 13 |
+| **Countdown** | Days / hours / minutes / seconds, a status card with a progress meter, and 19 milestone countdowns |
 | **What should I be doing now** | Reads the itinerary and shows the *current* activity, the *next* one with a countdown, and the rest of today. Before the trip it flips to pre-flight mode with prep nudges; after it switches to the wrap-up list |
 | **Weather forecast** | Nov 13–20 for Lajitas/Terlingua, Chisos Basin and Marathon — live Open-Meteo forecasts when the dates are inside the 16-day window, otherwise 5-year averages for the same dates. °F/°C toggle, offline caching, manual refresh |
 | **Packing** | 16 items with checkboxes that persist on your device, plus the **NO WATER AT CAMP** warning |
 | **Itinerary** | 8-day calendar grid (Nov 13–20). Days 1–5 are clickable and jump to the full details |
-| **Day by day** | The full story of each day, the fun facts, and a 20-photo lightbox gallery |
+| **Day by day** | The full story of each day, the fun facts, and a 21-photo lightbox gallery |
 | **Links** | Lajitas Golf Resort, "The Greatest Hike in Texas", and the Google My Map |
 
 ## Files
@@ -28,9 +28,10 @@ One scrollable page. Plain HTML, CSS and JavaScript — no build step, no framew
 index.html          the page itself (GitHub Pages entry point — keep it in the root)
 assets/styles.css   all styling: desert-sunset theme, responsive, focus states, print styles
 assets/app.js       countdown, "right now", weather engine, packing, lightbox, mobile nav
-images/*.jpg        the original photos (21 files)
-images/web/         optimized copies for the browser (image007: 1.1 MB → 389 KB)
+images/*.jpg        the photos (22 files)
+images/web/         optimized copies for the browser (image007: 1.1 MB → 389 KB, image033: 1.8 MB → 371 KB)
 HTML_Build_Page.md  the original brief
+Updates.md          the change request behind the November 2026 itinerary update
 ```
 
 ## Preview it locally
@@ -89,9 +90,33 @@ The site shows up at `https://<your-user>.github.io/big-bend-2026/` a minute or 
 
 - The brief called the banner `image100.jpg`; the file on disk is **`images/images100.jpg`**, so that is what the page uses.
   It is only 738×246, so the hero caps its height and lays a gradient over it rather than stretching it to full screen.
-  If you want a sharper banner later, `image011.jpg` (South Rim, 1200×844) drops straight in.
+  If you want a sharper banner later, `image008.jpg` (the Milky Way over the Chisos, 1200×775) or `image004.jpg`
+  (the ghost town, 1200×900) both drop straight in.
 - Every one of the 21 photos has real alt text describing what is actually in the frame.
 - `image007.jpg` (the tent photo) is served from `images/web/` at 1600 px for speed; clicking it opens the full-resolution original.
 - The Google My Maps link is the *edit* URL from the brief, so it may prompt you to sign in.
 - The packing checkboxes and the °F/°C choice are stored in `localStorage`, so they are per-device — nothing is sent anywhere.
 - No tracking, no cookies, no third-party scripts. The only network request the page makes is to Open-Meteo.
+
+## November 2026 update (`Updates.md`)
+
+- Friday departure moved from 7:00 AM to **5:30 AM**; Lajitas dinner set at **8:00 PM**
+- Venga Cafe moved from breakfast to a **12:00 PM lunch**; dinner is now **at the Browns**
+- **Sunday is a west-side day**: breakfast at the Browns, Ross Maxwell Scenic Drive, the Hot Spring Historic Trail
+  (and the J.O. Langford ruins), lunch on the trail, Santa Elena Canyon Trail, dinner at the Wensels
+- **The South Rim hike came off the plan**, so `image011.jpg` and `image012.jpg` were removed and
+  `image033.jpg` (hot spring), `image034.jpg` (Santa Elena Canyon Trail) and `image035.jpg` (Ross Maxwell Scenic Drive)
+  were added to Day 3
+- Tuesday is homeward bound at **10:00 AM**, and the long-road-vs-short-road "big decision" moved up to Monday's
+  drive to Marathon (now attributed to National Geographic rather than Gemini)
+- Packing's first aid line now calls out bandages, antiseptic and blister care; the pre-trip nudges gained a weather
+  check and a car fluids/tires/brakes check
+
+If the removed photos are ever wanted back: `git checkout 0d81634 -- images/image011.jpg images/image012.jpg`
+
+Two things to know about the new files:
+
+- They were renamed to lowercase (`image033`–`image035.jpg`) to match the existing convention — Pages is
+  case-sensitive, so keep any future files lowercase too.
+- `image033.jpg` (the hot spring) carries a photographer's watermark (`jasonnells.com`) in the lower-left corner.
+  Swap it for one of your own or add a credit if you would rather not publish a watermarked stock photo.
