@@ -20,7 +20,7 @@ One scrollable page. Plain HTML, CSS and JavaScript — no build step, no framew
 | **Packing** | 16 items with checkboxes that persist on your device, plus the **NO WATER AT CAMP** warning |
 | **Itinerary** | 8-day calendar grid (Nov 13–20). Days 1–5 are clickable and jump to the full details |
 | **Day by day** | The full story of each day, the fun facts, and a 21-photo lightbox gallery |
-| **Links** | Lajitas Golf Resort, "The Greatest Hike in Texas", and the Google My Map |
+| **Links** | Lajitas Golf Resort, the NPS guide to Ross Maxwell Scenic Drive, and the Google My Map |
 
 ## Files
 
@@ -111,6 +111,9 @@ The site shows up at `https://<your-user>.github.io/big-bend-2026/` a minute or 
   drive to Marathon (now attributed to National Geographic rather than Gemini)
 - Packing's first aid line now calls out bandages, antiseptic and blister care; the pre-trip nudges gained a weather
   check and a car fluids/tires/brakes check
+- The "Greatest Hike in Texas" (South Rim) video link was replaced with the NPS guide to
+  [Ross Maxwell Scenic Drive](https://www.nps.gov/bibe/planyourvisit/ross-maxwell-scenic-drive.htm), since that drive
+  is now the centrepiece of Sunday
 
 If the removed photos are ever wanted back: `git checkout 0d81634 -- images/image011.jpg images/image012.jpg`
 
